@@ -4,8 +4,8 @@ var App = new Vue({
 	Models : new Vue({
 		info : 'Vue Collection of Models',
 		Todo : klass(function (done, content) {
-				this.done = done;
-				this.content = content;
+			this.done = done;
+			this.content = content;
 		})
 	}),
 	Views : new Vue({
