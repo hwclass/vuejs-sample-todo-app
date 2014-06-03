@@ -1,19 +1,32 @@
-<div id="wrapper">
-	<header class="well">
-		<span class="title" v-on='click: handlerClickHeaderText'>{{title}}</span>
-	</header>
-	<div id="content" class="well">
-		<h1>{{title}}</h1>
-		<p>
-			<input type="text" id="to-do-content" v-model="newToDo.content"/>
-			<input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
-		</p>
-		<p><i>{{text}}</i></p>
-		<ul>
-			<li v-repeat="todos.data" v-on="click: done = !done" class="{{done ? 'done' : ''}}">{{content}}</li>
-		</ul>
-	</div>
-	<footer class="well">
-		<span class="title" v-on="click: handlerClickFooterText">{{title}}</span>
-	</footer>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery.validateme</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header class="well">
+				<span class="title" v-on='click: handlerClickHeaderText'>{{title}}</span>
+			</header>
+			<div id="content" class="well">
+				<h1>{{title}}</h1>
+				<p>
+					<input type="text" id="to-do-content" v-model="newToDo.content"/>
+					<input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
+				</p>
+				<p><i>{{text}}</i></p>
+				<ul>
+					<li v-repeat="todos.data" v-on="click: done = !done" class="{{done ? 'done' : ''}}">{{content}}</li>
+				</ul>
+			</div>
+			<footer class="well">
+				<span class="title" v-on="click: handlerClickFooterText">{{title}}</span>
+			</footer>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/klass/1.4.0/klass.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.10.4/vue.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
