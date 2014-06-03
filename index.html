@@ -1,0 +1,19 @@
+<div id="wrapper">
+	<header class="well">
+		<span class="title" v-on='click: handlerClickHeaderText'>{{title}}</span>
+	</header>
+	<div id="content" class="well">
+		<h1>{{title}}</h1>
+		<p>
+				<input type="text" id="to-do-content" v-model="newToDo.content"/>
+				<input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
+		</p>
+		<p><i>{{text}}</i></p>
+		<ul>
+				<li v-repeat="todos.data" v-on="click: done = !done" class="{{done ? 'done' : ''}}">{{content}}</li>
+		</ul>
+	</div>
+	<footer class="well">
+		<span class="title" v-on="click: handlerClickFooterText">{{title}}</span>
+	</footer>
+</div>
