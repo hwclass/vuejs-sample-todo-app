@@ -4,8 +4,8 @@ var App = new Vue({
 	Models : new Vue({
 		info : 'Vue Collection of Models',
 		Todo : klass(function (done, content) {
-				this.done = done;
-				this.content = content;
+			this.done = done;
+			this.content = content;
 		})
 	}),
 	Views : new Vue({
@@ -13,7 +13,7 @@ var App = new Vue({
 	}),
 	methods : {
 		test : function () {
-				console.log(App);
+			console.log(App);
 		}
 	}
 }) || {};
@@ -37,12 +37,12 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 			header : new Vue({
 				el : 'header',
 				data : {
-						title: 'Header'
+					title: 'Header'
 				},
 				methods : {
-						handlerClickHeaderText : function () {
-								alert('Clicked on header title!');
-						}
+					handlerClickHeaderText : function () {
+							alert('Clicked on header title!');
+					}
 				}
 			}),
 			content : new Module({
@@ -61,8 +61,8 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 				},
 				methods : {
 					handlerClickAddToDoButton : function () {
-							todos.push(this.newToDo);
-							this.newToDo = {};
+						todos.push(this.newToDo);
+						this.newToDo = {};
 					}
 				}
 			}),
@@ -73,7 +73,7 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 				},
 				methods : {
 					handlerClickFooterText : function () {
-							alert('Clicked on footer title!');
+						alert('Clicked on footer title!');
 					}
 				}
 			})
