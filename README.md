@@ -14,8 +14,10 @@ Array.prototype.push.apply(todos, [todo1,todo2]);
 </pre>
 
 ### usage 2
+```html
 <input type="text" id="to-do-content" v-model="newToDo.content"/>
 <input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
+```
 
 <pre>
 <code lang="javascript">
