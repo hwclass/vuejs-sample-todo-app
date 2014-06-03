@@ -41,11 +41,7 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 				},
 				methods : {
 					handlerClickHeaderText : function () {
-<<<<<<< HEAD
-							alert('Clicked on header title!');
-=======
 						alert('Clicked on header title!');
->>>>>>> a3f96c820dcf96cbaccfe7a9b3fb443347ab618d
 					}
 				}
 			}),
