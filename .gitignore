@@ -1,3 +1,5 @@
 /bower_components/*
-/bower_components/vue/*
-/bower_components/klass/*
+/bower_components/vue/src/*
+/bower_components/klass/src/*
+/bower_components/klass/make/*
+/bower_components/klass/test/*
