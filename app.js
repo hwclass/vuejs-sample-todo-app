@@ -20,11 +20,11 @@ var App = new Vue({
 }) || {};
 
 /*Initialize the App*/
-(function (App, Module) {
+(function (App, Vue) {
 	'use strict';
-	App.views = new Module({
-		index : new Module({
-			header : new Module({
+	App.views = new Vue({
+		index : new Vue({
+			header : new Vue({
 				el : 'header',
 				data : {
 					title: 'Header'
@@ -35,7 +35,7 @@ var App = new Vue({
 					}
 				}
 			}),
-			content : new Module({
+			content : new Vue({
 				el : '#content',
 				data: {
 					title: 'To-Do List',
@@ -67,8 +67,9 @@ var App = new Vue({
 					}
 				}
 			}),
-			footer : new Module({
+			footer : new Vue({
 				el : 'footer',
+				text : 'This is the footer...',
 				data : {
 					title: 'Footer'
 				},
