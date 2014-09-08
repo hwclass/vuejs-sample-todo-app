@@ -1,0 +1,17 @@
+{
+  "name": "VueJS Sample ToDo App",
+  "version": "0.0.1",
+  "authors": [
+    "Barış Güler <harderworking.class@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "klass" : "1.3.1",
+    "vue" : "0.10.6"
+  }
+}
