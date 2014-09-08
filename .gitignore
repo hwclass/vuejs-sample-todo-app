@@ -1,4 +1,6 @@
 /bower_components/*
+/bower_components/bootstrap/*
+/bower_components/jquery/dist/*
 /bower_components/vue/src/*
 /bower_components/klass/src/*
 /bower_components/klass/make/*

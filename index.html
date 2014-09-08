@@ -2,26 +2,36 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>vuejs sample to-do app</title>
+		<title>VueJS Sample To-Do List</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
 	</head>
 	<body>
 		<div id="wrapper">
 			<header class="well">
-				<span class="title" v-on='click: handlerClickHeaderText'>{{title}}</span>
+				<span class="title" v-on='click: handlerClickHeaderText'>You can use title parameter for header inner text as "header"</span>
 			</header>
 			<div id="content" class="well">
-				<h1>{{title}}</h1>
-				<p>
-					<input type="text" id="to-do-content" v-model="newToDo.content"/>
-					<input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
-				</p>
-				<p><i>{{text}}</i></p>
-				<ul>
-					<li v-repeat="todos.data" v-on="click: done = !done" class="{{done ? 'done' : ''}}">{{content}}</li>
-				</ul>
+				<div class="container" style="margin-top:20px;">
+					<div class="row">
+						<div class="col-xs-12">
+							<h3 class="text-center">{{title}}</h3>
+							<div class="well">
+								<p>
+									<input type="text" id="to-do-content" v-model="newToDo.content"  style="width:100%"/>
+									<input type="button" id="add-to-do" value="Add To-Do" v-on='click: handlerClickAddToDoButton'/>
+								</p>
+								<p><i>{{text}}</i></p>
+		            <div class="well">
+		        		<ul class="list-group checked-list-box">
+	              	<li v-repeat="todos.data" v-on="click: done = !done" class="{{done ? 'done' : ''}} list-group-item">{{content}}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>				
 			</div>
-			<footer class="well">
-				<span class="title" v-on="click: handlerClickFooterText">{{title}}</span>
+			<footer class="well" style="margin-top: 70px">
+				<span class="title" v-on='click: handlerClickHeaderText'>You can use title parameter for footer inner text as "footer"</span>
 			</footer>
 		</div>
 		<script type="text/javascript" src="bower_components/klass/klass.min.js"></script>

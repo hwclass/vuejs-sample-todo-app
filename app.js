@@ -1,6 +1,7 @@
 /*Create a Context Wrapper Object*/
 var App = new Vue({
 	info: 'Simple VueJS Inheritance',
+	todos : [],
 	Models : new Vue({
 		info : 'Vue Collection of Models',
 		Todo : klass(function (done, content) {
@@ -18,19 +19,16 @@ var App = new Vue({
 	}
 }) || {};
 
-/*Todos Array on the fly */
-var todos = [];
-
 /*Creating and Adding New Todos Into Our App.Models.Todo Object Instance*/
 var todo1 = new App.$options.Models.$options.Todo(false, 'Learn Javascript!');  
 var todo2 = new App.$options.Models.$options.Todo(false, 'Learn VueJS!');
 var todo3 = new App.$options.Models.$options.Todo(false, 'Do your homework!');
 var todo4 = new App.$options.Models.$options.Todo(false, 'Have a rest.. :)');  
 
-Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
+Array.prototype.push.apply(App.$options.todos, [todo1,todo2, todo3, todo4]);
 
 /*Initialize the App*/
-(function (App, Module, todos) {
+(function (App, Module) {
 	'use strict';
 	App.views = new Module({
 		index : new Module({
@@ -52,7 +50,7 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 					text : 'Added todo items below...',
 					todos: {
 						title : 'Todos',
-						data : todos
+						data : App.$options.todos
 					},
 					newToDo : {
 						done : false,
@@ -61,22 +59,22 @@ Array.prototype.push.apply(todos, [todo1,todo2, todo3, todo4]);
 				},
 				methods : {
 					handlerClickAddToDoButton : function () {
-						todos.push(this.newToDo);
+						App.$options.todos.push(this.newToDo);
 						this.newToDo = {};
 					}
 				}
 			}),
-			footer : new Module({
+			footer : new Vue({
 				el : 'footer',
 				data : {
-					title : 'Footer'                    
+					title: 'Footer'
 				},
 				methods : {
 					handlerClickFooterText : function () {
 						alert('Clicked on footer title!');
 					}
 				}
-			})
+			}),
 		})
 	});
-}(App, Vue, todos));
+}(App, Vue));
