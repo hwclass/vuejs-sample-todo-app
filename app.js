@@ -15,6 +15,15 @@ var App = new Vue({
 	methods : {
 		test : function () {
 			console.log(App);
+		},
+		isNull : function (obj) {
+			return (typeof obj === null ? true : false);
+		},
+		isUndefined : function (obj) {
+			return (typeof obj === 'undefined' ? true : false);
+		},
+		isEmptyString : function (str) {
+			return (str == '' ? true : false);
 		}
 	}
 }) || {};
@@ -51,19 +60,10 @@ var App = new Vue({
 				},
 				methods : {
 					handlerClickAddToDoButton : function () {
-						if (!this.isEmptyString(this.newToDo.content) && !this.isNull(this.newToDo.content) && !this.isUndefined(this.newToDo.content)) {
+						if (!App.$options.methods.isEmptyString(this.newToDo.content) && !App.$options.methods.isNull(this.newToDo.content) && !App.$options.methods.isUndefined(this.newToDo.content)) {
 							App.$options.todos.push(this.newToDo);
 							this.newToDo = {};
 						}
-					},
-					isNull : function (obj) {
-						return (typeof obj === null ? true : false);
-					},
-					isUndefined : function (obj) {
-						return (typeof obj === 'undefined' ? true : false);
-					},
-					isEmptyString : function (str) {
-						return (str == '' ? true : false);
 					}
 				}
 			}),
