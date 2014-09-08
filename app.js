@@ -19,20 +19,12 @@ var App = new Vue({
 	}
 }) || {};
 
-/*Creating and Adding New Todos Into Our App.Models.Todo Object Instance*/
-var todo1 = new App.$options.Models.$options.Todo(false, 'Learn Javascript!');  
-var todo2 = new App.$options.Models.$options.Todo(false, 'Learn VueJS!');
-var todo3 = new App.$options.Models.$options.Todo(false, 'Do your homework!');
-var todo4 = new App.$options.Models.$options.Todo(false, 'Have a rest.. :)');  
-
-Array.prototype.push.apply(App.$options.todos, [todo1,todo2, todo3, todo4]);
-
 /*Initialize the App*/
 (function (App, Module) {
 	'use strict';
 	App.views = new Module({
 		index : new Module({
-			header : new Vue({
+			header : new Module({
 				el : 'header',
 				data : {
 					title: 'Header'
@@ -59,12 +51,23 @@ Array.prototype.push.apply(App.$options.todos, [todo1,todo2, todo3, todo4]);
 				},
 				methods : {
 					handlerClickAddToDoButton : function () {
-						App.$options.todos.push(this.newToDo);
-						this.newToDo = {};
+						if (!this.isEmptyString(this.newToDo.content) && !this.isNull(this.newToDo.content) && !this.isUndefined(this.newToDo.content)) {
+							App.$options.todos.push(this.newToDo);
+							this.newToDo = {};
+						}
+					},
+					isNull : function (obj) {
+						return (typeof obj === null ? true : false);
+					},
+					isUndefined : function (obj) {
+						return (typeof obj === 'undefined' ? true : false);
+					},
+					isEmptyString : function (str) {
+						return (str == '' ? true : false);
 					}
 				}
 			}),
-			footer : new Vue({
+			footer : new Module({
 				el : 'footer',
 				data : {
 					title: 'Footer'
